@@ -1,0 +1,154 @@
+.overview-card {
+    background-color: var(--pure-white);
+    border-radius: 6px;
+    padding: 1rem;
+}
+
+.overview-card h2 {
+    font-size: 2rem;
+    font-weight: 600 !important;
+    color: #5e5e5e;
+}
+
+.sub-text {
+    color: var(--sub-text);
+}
+
+.icon-wrapper {
+    min-width: 40px;
+    min-height: 40px;
+    border-radius: 50px;
+    max-height: 40px;
+    position: relative;
+}
+
+.icon-wrapper svg {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    font-size: 24px;
+}
+
+/* total cards icon */
+.icon-total {
+    background-color: #edf0ff;
+}
+
+.icon-total svg {
+    color: #4762f0;
+    font-size: 20px;
+    top: 0.6rem;
+    left: 0.65rem;
+}
+
+/* total active cards icon */
+.icon-total-active {
+    background-color: #14c1b317;
+}
+
+.icon-total-active svg {
+    color: #14c1b4;
+}
+
+/* total pending cards icon */
+.icon-total-pending {
+    background-color: #eab03c15;
+}
+
+.icon-total-pending svg {
+    color: #eaaf3c;
+    font-size: 22px;
+    top: 0.55rem;
+    left: 0.6rem;
+}
+
+/* total inactive cards icon */
+.icon-total-inactive {
+    background-color: #f1565614;
+}
+
+.icon-total-inactive svg {
+    color: #f15656;
+    top: 0.5rem;
+    left: 0.5rem;
+}
+
+.hero-section {
+    padding: 1rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--brand-color);
+    border-radius: 20px;
+    width: 100%;
+    margin: 2rem 0 3rem 0;
+}
+
+.banner-img {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    color: var(--white);
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 1.8rem;
+    margin: 0 0 10px 0;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.hero-button {
+    border: none;
+    border-radius: 6px;
+    color: var(--brand-color);
+    padding: 10px 24px 10px 18px;
+    background-color: var(--pure-white);
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: var(--brand-color);
+    color: var(--white);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.wavy-box {
+    background-color: #4a8aae;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.wavy-box::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 45%;
+    background-color: #3b6a84;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    clip-path: polygon(
+        -7% 30%,
+        14% 23%,
+        38% 48%,
+        56% 37%,
+        76% 30%,
+        85% 22%,
+        100% 45%,
+        100% 100%,
+        0% 100%
+    );
+}
