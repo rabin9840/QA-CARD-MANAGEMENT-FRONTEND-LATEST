@@ -1,20 +1,26 @@
-import { Navigate, useLocation } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { RootState } from '../app/store';
+import { ReactNode } from 'react';
+// import { useCookies } from 'react-cookie';
+import { Navigate, Outlet } from 'react-router-dom';
 
-interface PrivateRouteProps {
-  children: JSX.Element;
+interface ProtectedRouteProps {
+    allowedRoles: string[];
+    children?: ReactNode;
 }
 
-const PrivateRoute = ({ children }: PrivateRouteProps) => {
-  const location = useLocation();
-  const isAuthenticated = useSelector((state: RootState) => Boolean(state?.auth?.token));
+export default function PrivateRoute({ allowedRoles }: ProtectedRouteProps) {
+    // const [cookies] = useCookies(['access_token', 'role']);
+    // const isAuthenticated = !!cookies.access_token;
+    // const [cookies] = useCookies(['access_token', 'role']);
+    const isAuthenticated = true;
+    const userRole = 'admin';
 
-  if (!isAuthenticated) {
-    return <Navigate to="/login" state={{ from: location }} />;
-  }
+    if (!isAuthenticated) {
+        return <Navigate to="/" replace />;
+    }
 
-  return children;
-};
+    if (!allowedRoles.includes(userRole)) {
+        return <Navigate to="/" replace />;
+    }
 
-export default PrivateRoute;
+    return <Outlet />;
+}

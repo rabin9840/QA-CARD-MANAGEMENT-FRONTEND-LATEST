@@ -1,7 +1,10 @@
 type EndpointType = {
-  [key: string]: string;
+    SSO_LOGIN: string;
 };
-const endpoints: EndpointType = {
-  facts: 'facts',
+
+const Endpoint: EndpointType = {
+    // SSO_LOGIN: "sso-login",
+    SSO_LOGIN: 'auth/sso-login',
 };
-export default endpoints;
+
+export default Endpoint;
